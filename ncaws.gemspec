@@ -5,7 +5,6 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Gem::Specification.new do |spec|
   spec.add_dependency 'aws-sdk'
   spec.add_dependency 'tty-prompt'
-  spec.add_dependency 'optparse'
   spec.add_dependency 'parseconfig'
   spec.add_dependency 'ncupdater'
   spec.add_development_dependency 'bundler', '~> 1.0'
