@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+# Prepared for dev, change require before using as a gem
+require File.dirname(__FILE__) + '/../lib/ncaws.rb'
+#require './lib/ncaws.rb'
+
+NCAws.new.run
