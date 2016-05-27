@@ -40,7 +40,7 @@ class NCAws
     def run
         commands = {
             :'Adding gem server' => 'sudo gem sources -a http://gems.nodesmanager.io',
-            :'Gem update' => 'sudo gem update akira'
+            :'Gem update' => 'sudo gem update ncaws'
         }
 
         ncupdater = NCUpdater::new(File.dirname(__FILE__) + '/../.semver', 'http://nodesmanager.io/versions/ncaws', commands)
@@ -113,7 +113,7 @@ class NCAws
                     instance_env = value.value
                 end
             end
-            servers["#{instance_env} #{instance_name} (#{instance.instances[0].private_ip_address})"] = "#{instance.instances[0].private_ip_address}"
+            servers["#{instance_env} #{instance_name.colorize(:light_blue)} (#{instance.instances[0].private_ip_address})"] = "#{instance.instances[0].private_ip_address}"
             if instance.instances[0].vpc_id == config['VPC1']['ID']
                 bastion["#{instance.instances[0].private_ip_address}"] = config['VPC1']['BASTION']
             elsif instance.instances[0].vpc_id == config['VPC2']['ID']
